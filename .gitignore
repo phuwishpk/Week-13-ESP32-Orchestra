@@ -1,1 +1,67 @@
+# ESP-IDF Build System
 build/
+*/build/
+sdkconfig.old
+dependencies.lock
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ESP-IDF specific
+managed_components/
+dependencies/
+.managed_components
+
+# Flash download tool
+flash_download_tool_*.exe
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Certificate files (if any)
+*.pem
+*.crt
+*.key
+
+# Partition tables (if generated)
+partitions.csv
