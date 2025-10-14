@@ -94,11 +94,12 @@ esp_err_t espnow_send_message(const orchestra_message_t* msg) {
     return result;
 }
 
-void espnow_on_data_sent(const wifi_tx_info_t *info, esp_now_send_status_t status) {
+// VVVVVV ---- ฟังก์ชันที่แก้ไข ---- VVVVVV
+void espnow_on_data_sent(const uint8_t *mac_addr, esp_now_send_status_t status) {
     if (status != ESP_NOW_SEND_SUCCESS) {
-        ESP_LOGW(TAG, "ESP-NOW send failed to %02x:%02x:%02x:%02x:%02x:%02x", 
-                 info->src_addr[0], info->src_addr[1], info->src_addr[2], 
-                 info->src_addr[3], info->src_addr[4], info->src_addr[5]);
+        ESP_LOGW(TAG, "ESP-NOW send failed to %02x:%02x:%02x:%02x:%02x:%02x",
+                 mac_addr[0], mac_addr[1], mac_addr[2],
+                 mac_addr[3], mac_addr[4], mac_addr[5]);
     }
 }
 

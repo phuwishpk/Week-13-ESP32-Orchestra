@@ -18,7 +18,8 @@ typedef struct {
 // ESP-NOW Functions
 esp_err_t espnow_conductor_init(void);
 esp_err_t espnow_send_message(const orchestra_message_t* msg);
-void espnow_on_data_sent(const wifi_tx_info_t *info, esp_now_send_status_t status);
+// VVVVVV ---- บรรทัดที่แก้ไข ---- VVVVVV
+void espnow_on_data_sent(const uint8_t *mac_addr, esp_now_send_status_t status);
 
 // Orchestra Control Functions
 bool start_song(uint8_t song_id);
